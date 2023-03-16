@@ -4,32 +4,16 @@
     <title>Back End Assessment</title>
   </head>
   <body class="container">
+    <button id="fortuneButton">Get a fortune</button>
     <button id="complimentButton">Get a compliment</button>
 
+    <form id="form">
+      <input id="form-input" type="text" placeholder="goals" />
+      <input type="submit" value="Submit" />
+    </form>
+<section id="section"></section>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
     
-  </body>
-</html>
-
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Get Your Fortune</title>
-  </head>
-  <body>
-    <h1>Get Your Fortune</h1>
-    <p id="fortune"></p>
-    <button id="get-fortune">Get Fortune</button>
-    <script>
-      const fortuneElement = document.getElementById('fortune');
-      const getFortuneButton = document.getElementById('get-fortune');
-      
-      getFortuneButton.addEventListener('click', async () => {
-        const response = await fetch('/fortune');
-        const fortune = await response.text();
-        fortuneElement.innerText = fortune;
-      });
-    </script>
   </body>
 </html>
