@@ -11,3 +11,25 @@
     
   </body>
 </html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Get Your Fortune</title>
+  </head>
+  <body>
+    <h1>Get Your Fortune</h1>
+    <p id="fortune"></p>
+    <button id="get-fortune">Get Fortune</button>
+    <script>
+      const fortuneElement = document.getElementById('fortune');
+      const getFortuneButton = document.getElementById('get-fortune');
+      
+      getFortuneButton.addEventListener('click', async () => {
+        const response = await fetch('/fortune');
+        const fortune = await response.text();
+        fortuneElement.innerText = fortune;
+      });
+    </script>
+  </body>
+</html>
